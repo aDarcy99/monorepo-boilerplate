@@ -1,0 +1,22 @@
+.root {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.333rem 0.5rem;
+  border-radius: var(--radius-sm);
+
+  &[data-hovered] {
+    background-color: var(--neutral-hovered);
+  }
+
+  &[data-focus-visible] {
+    background-color: var(--neutral-focused);
+  }
+
+  // Submenu open
+  &[data-open] {
+    background-color: var(--neutral-hovered);
+  }
+}

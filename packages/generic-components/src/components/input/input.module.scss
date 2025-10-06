@@ -1,0 +1,20 @@
+.root {
+  display: flex;
+  padding: 0.333rem;
+  gap: 0.25rem;
+  border-radius: var(--radius-sm);
+
+  background-color: var(--neutral-background);
+  font-size: var(--text-body-size);
+  font-weight: var(--text-body-weight);
+
+  .input {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+
+    &[data-focused] {
+      outline: none;
+    }
+  }
+}

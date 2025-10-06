@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.125rem 0.25rem;
+  border-radius: var(--radius-md);
+
+  background-color: var(--brand-background);
+
+  .remove-button {
+    border-radius: var(--radius-lg);
+  }
+}

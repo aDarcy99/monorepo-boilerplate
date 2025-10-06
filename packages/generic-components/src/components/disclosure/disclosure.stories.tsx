@@ -1,0 +1,25 @@
+import React from "react";
+import { Disclosure } from "./disclosure";
+
+import type { Meta, StoryFn } from "@storybook/react";
+
+const meta: Meta<typeof Disclosure> = {
+  component: Disclosure,
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
+};
+
+export default meta;
+type Story = StoryFn<typeof Disclosure>;
+
+export const Example: Story = (args) => (
+  <Disclosure {...args} style={{ width: "400px" }}>
+    Details on managing your account
+  </Disclosure>
+);
+
+Example.args = {
+  title: "Manage your account",
+};

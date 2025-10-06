@@ -1,0 +1,22 @@
+import React from "react";
+import { TextField } from "./textField";
+
+import type { Meta, StoryFn } from "@storybook/react";
+
+const meta: Meta<typeof TextField> = {
+  component: TextField,
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
+};
+
+export default meta;
+
+type Story = StoryFn<typeof TextField>;
+
+export const Example: Story = (args) => <TextField {...args} />;
+
+Example.args = {
+  label: "Name",
+};

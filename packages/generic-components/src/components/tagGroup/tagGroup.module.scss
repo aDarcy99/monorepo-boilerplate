@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .list {
+    display: flex;
+    gap: 0.25rem;
+  }
+}

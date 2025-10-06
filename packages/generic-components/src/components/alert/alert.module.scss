@@ -1,0 +1,41 @@
+.root {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+
+  .icon {
+    margin-top: 0.1rem;
+  }
+
+  &.type {
+    &--error {
+      background-color: color-mix(
+        in srgb,
+        var(--error-background) 20%,
+        transparent
+      );
+    }
+    &--warning {
+      background-color: color-mix(
+        in srgb,
+        var(--warning-background) 20%,
+        transparent
+      );
+    }
+    &--success {
+      background-color: color-mix(
+        in srgb,
+        var(--success-background) 20%,
+        transparent
+      );
+    }
+    &--info {
+      background-color: color-mix(
+        in srgb,
+        var(--info-background) 20%,
+        transparent
+      );
+    }
+  }
+}

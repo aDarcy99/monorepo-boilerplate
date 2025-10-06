@@ -1,0 +1,108 @@
+.root {
+  --radius: var(--radius-sm) var(--radius-sm) var(--radius-sm) var(--radius-sm);
+
+  outline: none;
+  align-self: start;
+  max-width: 100%;
+  min-height: 100px;
+  padding: 0.333rem;
+  border-spacing: 0 0.25rem;
+  border-radius: var(--radius-sm);
+
+  word-break: break-word;
+
+  &[data-focus-visible] {
+    outline: 2px solid var(--content-focused);
+    outline-offset: -1px;
+  }
+}
+
+.column-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.row {
+  cursor: default;
+  outline: none;
+  position: relative;
+  border-radius: var(--radius);
+  // Firefox
+  clip-path: inset(0 round var(--radius));
+  transform: scale(1);
+
+  &[data-focus-visible] {
+    outline: 2px solid var(--content-focused);
+    outline-offset: -2px;
+  }
+
+  &[data-pressed] {
+    background-color: var(--content-selected);
+  }
+
+  &[data-selected] {
+    background-color: color-mix(
+      in srgb,
+      var(--brand-background) 10%,
+      transparent
+    );
+
+    &[data-focus-visible],
+    .cell[data-focus-visible] {
+      outline-offset: -4px;
+    }
+  }
+
+  &[data-disabled] {
+    color: var(--content-text-muted);
+  }
+}
+
+.cell,
+.column {
+  padding: 4px 8px;
+  text-align: left;
+  outline: none;
+
+  &[data-focus-visible] {
+    outline: 2px solid var(--content-focused);
+    outline-offset: -2px;
+  }
+}
+
+.column {
+  border-bottom: 1px solid var(--content-border);
+  color: var(--color-text-subtle);
+}
+
+.cell {
+  transform: translateZ(0);
+
+  &:first-child {
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  }
+
+  &:last-child {
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+}
+
+.sort-indicator {
+  display: inline-flex;
+  line-height: 0;
+  opacity: 0.8;
+}
+
+// Join selected items if :has selector is supported
+@supports selector(:has(.foo)) {
+  .row[data-selected]:has(+ [data-selected]),
+  .row[data-selected]:has(+ .drop-indicator + [data-selected]) {
+    --radius-sm: 0px;
+  }
+
+  .row[data-selected] + [data-selected],
+  .row[data-selected] + .drop-indicator + [data-selected] {
+    --radius-sm: 0px;
+  }
+}

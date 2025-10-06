@@ -1,0 +1,31 @@
+{
+  "name": "template-web",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev": "vite dev",
+    "build": "vite build",
+    "predeploy": "pnpm run build",
+    "deploy": "pnpm run build && aws s3 sync dist/ s3://darcy-test-bucket --delete"
+  },
+  "devDependencies": {
+    "@repo/config-typescript": "workspace:*",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^5.0.2",
+    "sass": "^1.90.0",
+    "typescript": "^5.3.3",
+    "vite": "^7.1.5"
+  },
+  "dependencies": {
+    "@repo/generic-components": "workspace:*",
+    "@repo/generic-shared": "workspace:*",
+    "@tanstack/react-query": "^5.90.2",
+    "axios": "^1.12.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.8.2"
+  }
+}

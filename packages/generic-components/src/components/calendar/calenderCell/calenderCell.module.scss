@@ -1,0 +1,26 @@
+.root {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  line-height: 2rem;
+  border-radius: var(--radius-md);
+
+  &[data-disabled] {
+    cursor: not-allowed;
+    color: var(--neutral-text-muted);
+  }
+
+  &[data-hovered] {
+    background-color: var(--neutral-hovered);
+  }
+
+  &[data-focused] {
+    background-color: var(--neutral-focused);
+  }
+
+  &[data-selected] {
+    background-color: var(--neutral-selected);
+  }
+}

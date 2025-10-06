@@ -1,0 +1,24 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &[data-expanded] {
+    .button {
+      .chevron-icon {
+        transform: rotateZ(90deg);
+      }
+    }
+  }
+
+  .button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .chevron-icon {
+      transition: 0.2s all;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  width: 100%;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: inherit;
+
+    .output {
+      font-size: var(--text-label-size);
+    }
+  }
+
+  .track {
+    position: relative;
+
+    // Track
+    &:before {
+      content: "";
+      position: absolute;
+      top: -0.125rem;
+      display: block;
+      height: 0.333rem;
+      width: 100%;
+      border-radius: var(--radius-sm);
+
+      background: var(--neutral-background);
+    }
+
+    .thumb {
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      background: var(--brand-background);
+
+      &[data-dragging] {
+        background: var(--brand-focused);
+      }
+
+      &[data-focus-visible] {
+        outline: 2px solid var(--brand-focused);
+      }
+    }
+  }
+}

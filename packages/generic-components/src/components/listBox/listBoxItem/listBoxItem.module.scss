@@ -1,0 +1,25 @@
+.root {
+  cursor: pointer;
+  padding: 0.333rem 0.5rem;
+  border-radius: var(--radius-sm);
+
+  &[data-hovered] {
+    background-color: var(--neutral-hovered);
+  }
+
+  &[data-focused] {
+    outline: none;
+  }
+
+  &[data-focus-visible] {
+    outline: 1px solid var(--brand-focused);
+  }
+
+  &[data-selected] {
+    background-color: var(--neutral-selected);
+
+    &[data-focus-visible] {
+      outline: 1px solid currentColor;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  gap: 0.5rem;
+  border-radius: var(--radius-sm);
+  padding: 0.333rem;
+
+  font-size: var(--text-body-size);
+  font-weight: var(--text-body-weight);
+  background-color: var(--neutral-background);
+
+  &[data-focused] {
+    outline: 1px solid var(--brand-focused);
+  }
+
+  .input {
+  }
+}

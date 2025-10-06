@@ -1,0 +1,12 @@
+.root {
+  padding: 0.25rem 0.333rem;
+  border-radius: var(--radius-sm);
+
+  background-color: var(--neutral-background);
+
+  .arrow {
+    path {
+      fill: var(--neutral-background);
+    }
+  }
+}

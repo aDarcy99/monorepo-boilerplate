@@ -1,0 +1,56 @@
+.root {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 0.5rem;
+
+  .input {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--neutral-border);
+    transition: 0.4s all;
+
+    .check-icon {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.2s ease-out;
+
+      path {
+        fill: none;
+      }
+    }
+  }
+
+  &[data-hovered] {
+    .input {
+      background-color: var(--neutral-hovered);
+    }
+  }
+
+  &[data-focus-visible] {
+    .input {
+      outline: 1px solid var(--brand-focused);
+    }
+  }
+
+  &[data-selected] {
+    .input {
+      background-color: var(--brand-selected);
+      border: 1px solid var(--brand-selected);
+
+      .check-icon {
+        opacity: 1;
+        transform: scale(1);
+
+        path {
+          fill: var(--brand-text-inverse-default);
+        }
+      }
+    }
+  }
+}

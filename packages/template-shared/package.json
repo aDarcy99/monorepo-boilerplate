@@ -1,0 +1,16 @@
+{
+  "name": "@repo/template-shared",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev": "tsc --watch --preserveWatchOutput",
+    "build": "tsc"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "devDependencies": {
+    "@repo/config-typescript": "workspace:*",
+    "typescript": "5.3.3"
+  }
+}

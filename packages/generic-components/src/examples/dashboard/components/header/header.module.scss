@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  min-height: 4rem;
+  border-bottom: 1px solid var(--app-border);
+
+  .header-side {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 1rem;
+  }
+}

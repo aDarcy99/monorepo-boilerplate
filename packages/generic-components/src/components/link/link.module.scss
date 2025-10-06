@@ -1,0 +1,17 @@
+.root {
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+
+  color: var(--app-text-default);
+
+  &[data-hovered] {
+    text-decoration: underline;
+  }
+
+  &[data-current] {
+    color: var(--text-color);
+    font-weight: bold;
+  }
+}

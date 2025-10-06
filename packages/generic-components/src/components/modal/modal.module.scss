@@ -1,0 +1,32 @@
+.root {
+  --text-default: var(--elevated-text-default);
+  --text-subtle: var(--elevated-text-subtle);
+  --text-muted: var(--elevated-text-muted);
+
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  height: var(--visual-viewport-height);
+  align-items: center;
+  justify-content: center;
+
+  background-color: color-mix(
+    in srgb,
+    var(--elevated-background) 10%,
+    transparent
+  );
+
+  .content {
+    position: relative;
+    max-width: 300px;
+    padding: 2rem;
+    border-radius: 6px;
+    border: 1px solid var(--elevated-border);
+
+    box-shadow: 0 8px 20px rgba(0 0 0 / 0.1);
+    background-color: var(--elevated-background);
+  }
+}

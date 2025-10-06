@@ -1,0 +1,9 @@
+.root {
+  &[data-focused] {
+    outline: none;
+  }
+}
+
+.popover[data-trigger="ComboBox"] {
+  width: var(--trigger-width);
+}

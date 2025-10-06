@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  gap: 0.5rem;
+
+  &.orientation {
+    &--vertical {
+      flex-direction: column;
+    }
+  }
+}

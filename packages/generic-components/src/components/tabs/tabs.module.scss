@@ -1,0 +1,33 @@
+.root {
+  display: flex;
+
+  &[data-orientation="vertical"] {
+    flex-direction: column;
+  }
+
+  .header {
+    display: flex;
+    gap: 1rem;
+
+    &[data-orientation="horizontal"] {
+      flex-direction: column;
+    }
+
+    .item {
+      cursor: pointer;
+      padding: 0.25rem;
+      border-bottom: 1px solid var(--neutral-border);
+
+      &[data-selected] {
+        border-bottom: 3px solid var(--brand-selected);
+      }
+    }
+  }
+
+  .body {
+  }
+
+  .panel {
+    padding: 0.5rem;
+  }
+}

@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.size {
+  &--md {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.radius {
+  &--full {
+    border-radius: var(--radius-full);
+  }
+}

@@ -1,0 +1,69 @@
+.root {
+  // This is needed so the HiddenInput is positioned correctly
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .indicator {
+    cursor: pointer;
+    position: relative;
+    width: 2rem;
+    height: 1.25rem;
+    border: 2px solid var(--neutral-border);
+    border-radius: var(--radius-lg);
+    transition: all 200ms;
+
+    background-color: var(--neutral-background);
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 0.75rem;
+      height: 0.75rem;
+
+      top: 50%;
+      transform: translateX(calc(0% + 2px)) translateY(-50%);
+      border-radius: var(--radius-lg);
+      transition: all 200ms;
+
+      background-color: var(--brand-background);
+    }
+  }
+
+  &[data-pressed] {
+    .indicator {
+      border-color: var(--neutral-focused);
+
+      &:before {
+        background-color: var(--brand-hovered);
+      }
+    }
+  }
+
+  &[data-selected] {
+    .indicator {
+      border-color: var(--brand-background);
+      background-color: var(--brand-background);
+
+      &:before {
+        background-color: var(--brand-text-inverse-default);
+        transform: translateX(calc(100% + 2px)) translateY(-50%);
+      }
+    }
+
+    &[data-pressed] {
+      .indicator {
+        border-color: var(--brand-hovered);
+        background-color: var(--brand-hovered);
+      }
+    }
+  }
+
+  &[data-focus-visible] {
+    .indicator {
+      outline: 2px solid var(--brand-focused);
+      outline-offset: 2px;
+    }
+  }
+}

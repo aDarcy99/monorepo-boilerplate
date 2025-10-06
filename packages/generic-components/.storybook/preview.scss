@@ -1,0 +1,11 @@
+@import "../src/styles/global.scss";
+
+body {
+  color-scheme: dark light;
+}
+
+:root {
+  font-family: system-ui;
+  line-height: 1.5;
+  background: var(--background-app);
+}

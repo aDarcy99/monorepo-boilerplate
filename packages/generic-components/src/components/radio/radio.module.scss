@@ -1,0 +1,31 @@
+.root {
+  /* This is needed so the HiddenInput is positioned correctly */
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.333rem;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    box-sizing: border-box;
+    border-radius: var(--radius-md);
+    transition: all 0.2s;
+
+    background: var(--neutral-background);
+    border: 0.143rem solid var(--neutral-border);
+  }
+
+  &[data-selected] {
+    &:before {
+      border: 0.143rem solid var(--brand-border);
+      background-color: var(--brand-background);
+    }
+  }
+
+  &[data-focus-visible]:before {
+    outline: 2px solid var(--brand-focused);
+  }
+}

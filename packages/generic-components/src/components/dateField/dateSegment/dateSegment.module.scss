@@ -1,0 +1,23 @@
+.root {
+  padding: 0.125rem;
+  margin: 0.125rem;
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+
+  &[data-type="literal"] {
+    padding: 0;
+  }
+
+  &[data-placeholder] {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  &[data-focused] {
+    color: var(--neutral-text);
+    background: var(--neutral-focused);
+    outline: none;
+    caret-color: transparent;
+    border-radius: var(--radius-sm);
+  }
+}

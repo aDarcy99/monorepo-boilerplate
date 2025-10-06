@@ -1,0 +1,33 @@
+.root {
+  overflow: auto;
+  padding: 0.25rem;
+  border: 1px solid var(--content-border);
+  border-radius: var(--radius-sm);
+
+  background-color: var(--content-background);
+
+  // Firefox Scrollbar
+  scrollbar-width: thin;
+  scrollbar-color: var(--neutral-background) transparent;
+
+  // Chrome, Edge, Safari Scrollbar
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--neutral-background);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: var(--neutral-hovered);
+  }
+}

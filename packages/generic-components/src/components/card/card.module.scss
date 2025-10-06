@@ -1,0 +1,32 @@
+.root {
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+
+  &.variant {
+    &--filled {
+      &.color {
+        &--neutral {
+          color: var(--neutral-text);
+          background-color: var(--neutral-background);
+        }
+        &--brand {
+          color: var(--brand-text);
+          background-color: var(--brand-background);
+        }
+      }
+    }
+
+    &--outlined {
+      color: currentColor;
+
+      &.color {
+        &--neutral {
+          border: 1px solid var(--neutral-border);
+        }
+        &--brand {
+          border: 1px solid var(--brand-border);
+        }
+      }
+    }
+  }
+}

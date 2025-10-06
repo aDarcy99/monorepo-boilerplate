@@ -1,0 +1,232 @@
+.root {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+
+  font: inherit;
+
+  // Size
+  &.size {
+    &--sm {
+      padding: 0.125rem 0.5rem;
+
+      &.icon-only {
+        padding: 0.125rem;
+      }
+    }
+
+    &--md {
+      padding: 0.25rem 0.75rem;
+
+      &.icon-only {
+        padding: 0.25rem;
+      }
+    }
+
+    &--lg {
+      padding: 0.5rem 0.75rem;
+
+      &.icon-only {
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  // Width
+  &.width {
+    &--fit-content {
+      width: fit-content;
+    }
+
+    &--fit-container {
+      width: 100%;
+    }
+  }
+
+  &.height {
+    &--fit-content {
+      height: fit-content;
+    }
+
+    &--fit-container {
+      height: 100%;
+    }
+  }
+
+  // Text alignment
+  &.text-alignment {
+    &--start {
+      justify-content: flex-start;
+    }
+
+    &--center {
+      justify-content: center;
+    }
+
+    &--end {
+      justify-content: flex-end;
+    }
+  }
+
+  // Variants
+  &.variant {
+    &--filled {
+      border: 0px solid;
+
+      &.color {
+        &--neutral {
+          color: var(--neutral-text);
+          background-color: var(--neutral-background);
+
+          &[data-hovered] {
+            background-color: var(--neutral-hovered);
+          }
+        }
+
+        &--brand {
+          color: var(--brand-text);
+          background-color: var(--brand-background);
+
+          &[data-hovered] {
+            background-color: var(--brand-hovered);
+          }
+        }
+
+        &--error {
+          color: var(--error-text);
+          background-color: var(--error-background);
+
+          &[data-hovered] {
+            background-color: var(--error-hovered);
+          }
+        }
+
+        &--success {
+          color: var(--success-text);
+          background-color: var(--success-background);
+
+          &[data-hovered] {
+            background-color: var(--success-hovered);
+          }
+        }
+
+        &--warning {
+          color: var(--warning-text);
+          background-color: var(--warning-background);
+
+          &[data-hovered] {
+            background-color: var(--warning-hovered);
+          }
+        }
+
+        &--info {
+          color: var(--info-text);
+          background-color: var(--info-background);
+
+          &[data-hovered] {
+            background-color: var(--info-hovered);
+          }
+        }
+      }
+    }
+
+    &--transparent,
+    &--outlined {
+      background-color: transparent;
+
+      &.color {
+        &--brand {
+          color: var(--brand-text);
+
+          &[data-hovered] {
+            background-color: color-mix(
+              in srgb,
+              var(--brand-background) 65%,
+              transparent
+            );
+          }
+        }
+
+        &--error {
+          color: var(--error-text);
+
+          &[data-hovered] {
+            background-color: color-mix(
+              in srgb,
+              var(--error-background) 75%,
+              transparent
+            );
+          }
+        }
+
+        &--success {
+          color: var(--success-text);
+
+          &[data-hovered] {
+            background-color: color-mix(
+              in srgb,
+              var(--success-background) 75%,
+              transparent
+            );
+          }
+        }
+
+        &--info {
+          color: var(--info-text);
+
+          &[data-hovered] {
+            background-color: color-mix(
+              in srgb,
+              var(--info-background) 75%,
+              transparent
+            );
+          }
+        }
+
+        &--neutral {
+          color: var(--neutral-text);
+
+          &[data-hovered] {
+            background-color: color-mix(
+              in srgb,
+              var(--neutral-background) 75%,
+              transparent
+            );
+          }
+        }
+      }
+    }
+
+    &--outlined {
+      &.color {
+        &--brand {
+          border: 2px solid var(--brand-border);
+        }
+
+        &--error {
+          border: 2px solid var(--error-border);
+        }
+
+        &--success {
+          border: 2px solid var(--success-border);
+        }
+
+        &--info {
+          border: 2px solid var(--info-border);
+        }
+
+        &--neutral {
+          border: 2px solid vars(--neutral-border);
+        }
+      }
+    }
+
+    &--unset {
+      all: unset;
+    }
+  }
+}
