@@ -1,9 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@repo/config-typescript/tsconfig.bundler.json",
+  "extends": "@repo/config-typescript/tsconfig.base.json",
   "include": ["src", "./src/types/global.d.ts"],
   "compilerOptions": {
     "outDir": "dist",
+
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
 
     /* Decarator support for TypeORM */
     "experimentalDecorators": true,
