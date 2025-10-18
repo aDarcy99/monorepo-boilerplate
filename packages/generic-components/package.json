@@ -39,7 +39,8 @@
   ],
   "peerDependencies": {
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "react-aria": "^3.44.0"
   },
   "devDependencies": {
     "@repo/config-typescript": "workspace:*",
