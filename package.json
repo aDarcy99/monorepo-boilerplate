@@ -8,7 +8,6 @@
     "clean": "turbo run clean",
     "dev:web": "turbo run dev --filter=template-web...",
     "dev:server": "turbo run dev --filter=template-server...",
-
     "deploy:web": "turbo run deploy --filter=template-web"
   },
   "devDependencies": {

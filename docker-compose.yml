@@ -1,0 +1,11 @@
+services:
+  template-server:
+    container_name: template-server
+    build:
+      context: .
+      dockerfile: ./apps/template-server/dockerfile
+    env_file:
+      - ./apps/template-server/.env.production
+    restart: always
+    ports:
+      - 2999:2999

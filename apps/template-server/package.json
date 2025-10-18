@@ -2,16 +2,16 @@
   "name": "template-server",
   "version": "1.0.0",
   "description": "",
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.1",
   "main": "./src/app.ts",
   "scripts": {
     "clean": "rimraf dist",
     "dev": "tsx watch src/app.ts",
     "build": "tsc",
-    "deploy": "",
     "start": "node dist/app.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@repo/generic-shared": "workspace:*",
     "@repo/template-shared": "workspace:*",
