@@ -1,6 +1,14 @@
 import dotenv from "dotenv";
+import fs from "fs";
+import path from "path";
 
-dotenv.config();
+const localEnvironmentPath = path.resolve(process.cwd(), ".env.local");
+
+const doesLocalEnvironmentExist = fs.existsSync(localEnvironmentPath);
+
+if (doesLocalEnvironmentExist) {
+  dotenv.config({ path: localEnvironmentPath });
+}
 
 type TEnv = {
   NODE_ENV: string;
