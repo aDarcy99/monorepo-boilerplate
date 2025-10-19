@@ -24,10 +24,11 @@ const HomePage = () => {
 
   return (
     <div className={styles["root"]}>
-      <div className={styles["container"]}>
+      <header className={styles["header"]}>
         <Components.Text type="title">Monorepo boilerplate</Components.Text>
         <Components.Text type="heading">React + Express</Components.Text>
-        <Components.Separator />
+      </header>
+      <main className={styles["main"]}>
         <Components.Text type="body">
           My framework for building modern full-stack web applications
         </Components.Text>
@@ -37,7 +38,14 @@ const HomePage = () => {
         <Components.Alert type={healthCheck.type}>
           {healthCheck.message}
         </Components.Alert>
-      </div>
+
+        <Components.Link href="https://boilerplate.m8works.com/">
+          <Components.Button>
+            <Icons.GitHubLogo /> Github
+          </Components.Button>
+        </Components.Link>
+      </main>
+      <footer className="footer"></footer>
     </div>
   );
 };
