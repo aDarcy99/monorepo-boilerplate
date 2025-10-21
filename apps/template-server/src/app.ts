@@ -15,7 +15,8 @@ import healthCheckRouter from "./features/healthcheck/healthcheck.route";
 import { swaggerConfig } from "./config/swagger.config";
 
 const main = async () => {
-  const PORT = env.PORT;
+  const PORT = Number(env.PORT);
+  const HOST = env.HOST;
   const app = express();
 
   // Middleware
@@ -38,8 +39,8 @@ const main = async () => {
   // Error handler
   // TODO: Error handling
 
-  app.listen(PORT, () => {
-    console.log(`API server running on port ${PORT}`);
+  app.listen(PORT, HOST, () => {
+    console.log(`API server running on ${HOST}:${PORT}`);
   });
 };
 
