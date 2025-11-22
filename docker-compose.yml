@@ -2,10 +2,34 @@ services:
   template-server:
     container_name: template-server
     build:
-      context: .
+      context: ./
       dockerfile: ./apps/template-server/dockerfile
+    image: 176863687623.dkr.ecr.ap-southeast-2.amazonaws.com/monorepo-boilerplate/template-server
     env_file:
       - ./apps/template-server/.env.production
-    restart: always
+    restart: unless-stopped
+    expose:
+      - "2999"
+    networks: [web]
+  caddy:
+    container_name: caddy
+    build:
+      context: ./infra/caddy
+      dockerfile: dockerfile
+    image: 176863687623.dkr.ecr.ap-southeast-2.amazonaws.com/monorepo-boilerplate/caddy
+    env_file:
+      - ./infra/caddy/.env.production
+    restart: unless-stopped
     ports:
-      - 2999:2999
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+    depends_on:
+      - template-server
+    networks: [web]
+volumes:
+  caddy_data:
+networks:
+  web:
+    driver: bridge
